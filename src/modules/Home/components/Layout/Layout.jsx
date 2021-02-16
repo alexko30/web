@@ -8,6 +8,7 @@ import { Lab1AppDescription, Lab1HostingAndIDE, Lab1Task, Lab1Look, Lab1Table, L
 import { Lab2List, Lab2Task, Lab2Id, Lab2Indent, Lab2Float, Lab2Selectors, Lab2SelectorsTagClass, Lab2SelectorsOther, Lab2SelectorsGrouping } from './modules/Lab2';
 
 import styles from './Layout.styles';
+import { Link } from 'react-router-dom';
 
 const LAB_ID = {
   first: 0,
@@ -80,6 +81,7 @@ class Layout extends React.Component {
           labsAmount={labsAmount}
           onLabSelect={this.handleLabSelect}
         />
+        <Link to="/app">Go to App</Link>
         <div className={classes.content}>
           <Sidebar 
             classes={{
