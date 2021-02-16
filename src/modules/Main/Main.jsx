@@ -22,6 +22,7 @@ class Main extends React.Component {
           <h1>Denzel</h1>
           <img className={classes.logo} src="https://www.freepnglogos.com/uploads/cleveland-auto-show-car-logo-png-25.png" alt="logo" />
           <a style={{ display: 'block' }} href="https://www.mercedes-benz.ua/" target="_blank" rel="noopener noreferrer">Feel free to join us!</a>
+          <marquee behavior="scroll" direction="left">Denzel</marquee>
         </header>
         <form>
           <label for="fname">First name:</label><br />
@@ -48,6 +49,16 @@ class Main extends React.Component {
             ))}
           </tbody>
         </table>
+
+        <ul style={{ marginLeft: 12 }}>
+          <li>Milk</li>
+          <li>Cheese
+            <ul>
+              <li>Blue cheese</li>
+              <li>Feta</li>
+            </ul>
+          </li>
+        </ul>
       </div>
     );
   }

@@ -9,7 +9,7 @@ class Home extends React.Component {
   render() {
     return (
       <Layout 
-        labsAmount={1}
+        labsAmount={2}
       />
     );
   }

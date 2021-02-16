@@ -4,16 +4,19 @@ import { Button, withStyles } from '@material-ui/core';
 import styles from './Header.styles';
 
 class Header extends React.Component {
+  handleSelect = (id) => () => {
+    this.props.onLabSelect(id);
+  }
 
   render() {
     const { classes, labsAmount, selectedLabId } = this.props;
-
+    
     return (
       <header className={classes.root}>
         <section className={classes.intro}>
           <h1 className={classes.introHeading}>ЗВІТИ ЛАБОРАТОРНИХ РОБІТ</h1>
           <h2 className={classes.introSubheading}>З ДИСЦИПЛІНИ "WEB-ТЕХНОЛОГІЇ</h2>
-          <h3 className={classes.introIdentification}>Групи ІА-72, Бригади 000, Корнієнко О., Кудименко В., Хитрик Г.</h3>
+          <h3 className={classes.introIdentification}>Групи ІА-72, Бригади 5, Корнієнко О., Кудименко В., Хитрик Г.</h3>
         </section>
         <section className={classes.labs}>
           {Array(labsAmount).fill('').map((x, i) => (
@@ -21,6 +24,7 @@ class Header extends React.Component {
               style={{ background: i === selectedLabId ? '#dbfdff' : 'inherit' }}
               key={i}
               className={classes.labBtn}
+              onClick={this.handleSelect(i)}
             >
               Лабораторна робота {i + 1}
             </Button>

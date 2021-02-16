@@ -16,6 +16,10 @@ const styles = {
     
     '& tr:nth-child(even)': {
       backgroundColor: '#dddddd',
+    },
+
+    '& > header': {
+      textAlign: 'center'
     }
   },
   header: {
