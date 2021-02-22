@@ -18,12 +18,13 @@ const styles = {
       backgroundColor: '#dddddd',
     },
 
-    '& > header': {
-      textAlign: 'center'
-    }
+    '& > header': {}
   },
   header: {
-    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   logo: {
     width: 150,

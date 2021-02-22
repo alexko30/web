@@ -3,16 +3,16 @@ import { withStyles } from '@material-ui/core';
 
 import Layout from './components/Layout';
 
-import styles from './Home.styles';
+import styles from './Report.styles';
 
-class Home extends React.Component {
+class Report extends React.Component {
   render() {
     return (
       <Layout 
-        labsAmount={2}
+        labsAmount={3}
       />
     );
   }
 }
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(Report);

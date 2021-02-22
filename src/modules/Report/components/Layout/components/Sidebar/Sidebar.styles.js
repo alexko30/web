@@ -4,7 +4,9 @@ const styles = {
   },
   btn: {
     display: 'flex',
-    marginBottom: 8
+    marginBottom: 8,
+    textAlign: 'left',
+    alignItems: 'flex-end',
   }
 };
 

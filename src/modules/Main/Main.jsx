@@ -22,12 +22,12 @@ class Main extends React.Component {
           <h1>Denzel</h1>
           <img className={classes.logo} src="https://www.freepnglogos.com/uploads/cleveland-auto-show-car-logo-png-25.png" alt="logo" />
           <a style={{ display: 'block' }} href="https://www.mercedes-benz.ua/" target="_blank" rel="noopener noreferrer">Feel free to join us!</a>
-          <marquee behavior="scroll" direction="left">Denzel</marquee>
+          <marquee behavior="scroll" direction="left" style={{ position: 'absolute', left: 0, top: 0, }}>Denzel</marquee>
         </header>
         <form>
-          <label for="fname">First name:</label><br />
+          <label htmlFor="fname">First name:</label><br />
           <input type="text" id="fname" name="fname" /><br />
-          <label for="lname">Last name:</label><br />
+          <label htmlFor="lname">Last name:</label><br />
           <input type="text" id="lname" name="lname" />
         </form>
         <br />
@@ -51,11 +51,11 @@ class Main extends React.Component {
         </table>
 
         <ul style={{ marginLeft: 12 }}>
-          <li>Milk</li>
-          <li>Cheese
+          <li>Tesla</li>
+          <li>Toyota
             <ul>
-              <li>Blue cheese</li>
-              <li>Feta</li>
+              <li>Jaguar</li>
+              <li>Mercedes</li>
             </ul>
           </li>
         </ul>

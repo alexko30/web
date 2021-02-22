@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
           <Button 
             style={{ background: id === selectedLabContentId ? '#dbfdff' : 'inherit' }}
             className={classes.btn} 
-            key={name} 
+            key={id} 
             onClick={this.handleTabSelect(id, component)}
           >
             {name}

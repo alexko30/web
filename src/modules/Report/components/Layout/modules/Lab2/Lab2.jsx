@@ -78,7 +78,7 @@ export const Lab2Float = withStyles(styles)(() => {
     <code>
       <pre>
       {`
-<marquee behavior="scroll" direction="left">Denzel</marquee>
+<marquee behavior="scroll" direction="left" style={{ position: 'absolute' }}>Denzel</marquee>
       `}
       </pre>
     </code>

@@ -6,11 +6,14 @@ const styles = {
   content: {
     marginTop: 24,
     display: 'flex',
-    height: 'calc(100% - 140px)'
+    height: 'calc(100% - 160px)'
   },
   sidebar: {
     minWidth: 230,
     width: 230,
+    height: '100%',
+    overflowY: 'auto',
+    paddingRight: 4,
   },
   labContent: {
     padding: 12,

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 
-import Home from './modules/Home';
+import Report from './modules/Report';
 import Main from './modules/Main';
 
 import './App.css';
@@ -33,7 +33,7 @@ class App extends React.Component {
         <CssBaseline/>
         <BrowserRouter>
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={Report} />
             <Route path="/app" exact component={Main} />
           </Switch>
         </BrowserRouter>
