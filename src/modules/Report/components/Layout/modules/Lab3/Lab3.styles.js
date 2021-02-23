@@ -55,11 +55,12 @@ export const hytrykSiteStyles = {
     color: 'white'
   },
   course: {
-    padding: 24,
+    textAlign: 'center',
     backgroundColor: 'black',
     color: 'white',
     borderRadius: 6,
-    border: '1px solid grey'
+    border: '1px solid grey',
+    width: '30%'
   },
 };
 

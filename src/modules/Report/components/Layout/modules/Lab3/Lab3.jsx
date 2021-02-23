@@ -208,9 +208,6 @@ export const Lab3KorniienkoFlex = withStyles(styles)(() => {
 });
 
 export const Lab3KorniienkoSite = withStyles(korniinkoSiteStyles)(({ classes }) => {
-  const border = '1px solid black';
-  const padding = '10px 0 10px 10px';
-
   return (
     <div>
       <div
@@ -451,33 +448,33 @@ export const Lab3HytrykSite = withStyles(hytrykSiteStyles)((props) => {
         {links.map((text) => (
           <Button key={text}>{text}</Button>
         ))}
-        <Select variant="outlined" defaultValue="kyiv">
+        <Select style={{ width: '200px', height: 40 }} variant="outlined" defaultValue="kyiv">
           <MenuItem value="kyiv">Київ</MenuItem>
           <MenuItem value="dnipro">Дніпро</MenuItem>
         </Select>
       </header>
 
-      <section>
-        <div>
-          <h6>Курси програмування <span>з 100% гарантією працевлаштування</span></h6>
-          <p>З SCHOOL ти отримуєш високооплачувану роботу своєї мрії<br />Ми готуємо висококласних IT-спеціалістів</p>
+      <section style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ width: '50%' }}>
+          <h6 style={{ fontSize: 20, fontWeight: 700, textTransform: 'uppercase' }}>Курси програмування <br /><span style={{ color: 'blue' }}>з 100% гарантією</span>&nbsp; працевлаштування</h6>
+          <p style={{ marginTop: 50 }}>З SCHOOL ти отримуєш високооплачувану роботу своєї мрії<br />Ми готуємо висококласних IT-спеціалістів</p>
         </div>
-        <div>
-          <span>Школа &nbsp;</span>
+        <div style={{ fontSize: 55, fontWeight: 800, lineHeight: 1 }}>
+          <div style={{ fontSize: 120, color: 'white', '-webkit-text-stroke': '1px blue' }}>Школа &nbsp;</div>
           прграмування
         </div>
       </section>
 
       <section>
-        <div style={{ background: 'aqua', padding: 12 }}>
-          <div style={{ textAlign: 'center' }}>
-            <h6>Відгуки від роботадавців</h6>
-            <h6>Підтверджена якість</h6>
-          </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <div style={{ background: '#00ffff1c', padding: 12, marginTop: 20 }}>
+        <div style={{ textAlign: 'center', fontWeight: 800, textTransform: 'uppercase' }}>
+          <h6>Відгуки від роботадавців</h6>
+          <h6 style={{ color: 'orange', marginBottom: 24 }}>Підтверджена якість</h6>
+        </div>
+          <p style={{ margin: '12px 20%' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
           
           <div style={{ display: 'flex', marginTop: 24 }}>
-            <div style={{ width: '30%' }}>
+            <div style={{ width: '40%' }}>
               <iframe 
                 allowFullScreen 
                 title="video"
@@ -493,26 +490,26 @@ export const Lab3HytrykSite = withStyles(hytrykSiteStyles)((props) => {
               {[
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Luxoft-logo-2015.svg/1280px-Luxoft-logo-2015.svg.png',
                 'http://pngimg.com/uploads/microsoft/microsoft_PNG20.png',
-                'https://6-dof.ru/wp-content/uploads/2017/07/apple-logo.png',
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/1200px-Apple_logo_grey.svg.png',
                 'https://upload.wikimedia.org/wikipedia/commons/d/da/SoftServe_logo_new.png',
                 'https://crmrating.org/img/terrasoft.png',
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Luxoft-logo-2015.svg/1280px-Luxoft-logo-2015.svg.png',
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Luxoft-logo-2015.svg/1280px-Luxoft-logo-2015.svg.png',
               ].map((companyLogo, i) => (
-                <img key={i} src={companyLogo} alt="" width={100} style={{ objectFit: 'contain', margin: 12 }} />
+                <img key={i} src={companyLogo} alt="" height="40" style={{ objectFit: 'contain', margin: 12 }} />
               ))}
             </div>
           </div>
         </div>
       </section>
     
-      <section className={classes.courses}>
-        <div style={{ textAlign: 'center' }}>
+      <section className={classes.courses} style={{ padding: 24 }}>
+        <div style={{ textAlign: 'center', fontWeight: 800, textTransform: 'uppercase' }}>
           <h6>Відгуки від роботадавців</h6>
-          <h6>Підтверджена якість</h6>
+          <h6 style={{ color: 'orange' }}>Підтверджена якість</h6>
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'nowrap' }}>
+        <div style={{ display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-between', marginTop: 32, }}>
           {[
             {
               imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/240px-JavaScript-logo.png',
@@ -525,11 +522,11 @@ export const Lab3HytrykSite = withStyles(hytrykSiteStyles)((props) => {
             },
           ].map(({ imgSrc }, i) => (
             <div key={imgSrc} className={classes.course}>
-              <div style={{ textAlign: 'center', marginBottom: 20 }}>
-                <img src={imgSrc} alt="" width="100" />
-                <div>Complex</div>
-                <div>JavaScript</div>
-                <div>Комплексний курс</div>
+              <div style={{ textAlign: 'center', marginBottom: 20, fontWeight: 800, padding: 24, }}>
+                <img src={imgSrc} alt="" height="100" />
+                <div style={{ color: 'aqua' }}>Complex</div>
+                <div style={{ textTransform: 'uppercase' }}>JavaScript</div>
+                <div style={{ textTransform: 'uppercase', color: 'orange' }}>Комплексний курс</div>
               </div>
 
               <div>
@@ -538,9 +535,9 @@ export const Lab3HytrykSite = withStyles(hytrykSiteStyles)((props) => {
                 <div>Ціна: від 14500грн</div>
               </div>
 
-              <div>Залишилося 6 місць</div>
+              <div style={{ color: 'aqua', marginTop: 40 }}>Залишилося 6 місць</div>
 
-              <div>
+              <div style={{ border: '1px solid grey', textAlign: 'center', padding: 12, marginTop: 40 }}>
                 Детальніше
               </div>
             </div>
