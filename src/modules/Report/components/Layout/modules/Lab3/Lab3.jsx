@@ -411,6 +411,15 @@ export const Lab3KudymenkoSite = withStyles(kudymenkoSiteStyles)((props) => {
           ))}
         </div>
         <div style={{ background: 'orange', padding: 12, width: '30%' }}>
+          <img 
+            alt=""
+            width="25px"
+            src={faker.image.business()}
+            style={{ marginRight: 12 }}
+          />
+          <b>{faker.company.catchPhrase()}</b>
+          <br />
+          <br />
           {Array(3).fill('').map((x, i) => (
             <div key={i}>
               <div>
@@ -426,8 +435,8 @@ export const Lab3KudymenkoSite = withStyles(kudymenkoSiteStyles)((props) => {
             </div>
           ))}
         </div>
-        <div style={{ background: 'red', padding: 12, width: '30%' }}>
-          <h6>Знати курс</h6>
+        <div style={{ background: 'red', padding: 12, width: '30%', color: 'white' }}>
+          <h6 style={{ fontSize: 20 }}>Знайти курс</h6>
           <p style={{ margin: '12px 0' }}>
             Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lore Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lore
           </p>
