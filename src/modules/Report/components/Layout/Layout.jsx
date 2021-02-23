@@ -26,7 +26,7 @@ const LAB_ID = {
 class Layout extends React.Component {
   state = {
     selectedLabContentId: undefined,
-    activeTabId: LAB_ID.third,
+    activeTabId: LAB_ID.first,
     Component: () => <div style={{ textAlign: 'center', paddingTop: '10%' }}>Будь-ласка, оберіть щось збоку :)</div>
   };
 
