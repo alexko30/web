@@ -3,7 +3,10 @@ const styles = {
 };
 
 export const korniinkoSiteStyles = {
-
+  mainCourseName: {
+    fontSize: 20,
+    marginBottom: 12,
+  },
 };
 
 export const kudymenkoSiteStyles = {

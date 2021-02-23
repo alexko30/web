@@ -207,22 +207,157 @@ export const Lab3KorniienkoFlex = withStyles(styles)(() => {
   );
 });
 
-export const Lab3KorniienkoSite = withStyles(styles)(() => {
+export const Lab3KorniienkoSite = withStyles(korniinkoSiteStyles)(({ classes }) => {
   const border = '1px solid black';
   const padding = '10px 0 10px 10px';
 
   return (
-    <div style={{ height: 400, display: 'inline-flex', boxShadow: '2px 2px 8px 2px' }}>
-      <div style={{ ...flexCenterStyles, width: 100, height: '100%', border, background: 'yellow' }}>
-        2
+    <div>
+      <div
+        style={{
+          display: 'flex',
+          width: '100%',
+        }}
+      >
+        <div 
+          style={{ 
+            height: 400,
+            width: '50%',
+            minWidth: '50%',
+            display: 'flex',
+            alignItems: 'flex-end', 
+            justifyContent: 'center', 
+            color: 'white', 
+            fontSize: 30,
+            fontWeight: 700,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundImage: 'url(https://www.jsexpert.net/wp-content/uploads/2019/03/HTML5-y-CSS.jpg)',
+          }}
+        >
+          Частина 1
+        </div>
+        <div style={{ marginLeft: 24, }}>
+          <h1 className={classes.mainCourseName}>Dolor sit amet Dolor sit amet Dolor sit amet Dolor sit amet</h1>
+          <strike style={{ color: 'blue', marginRight: 12 }}>1,190 грн</strike>
+          <span style={{ color: 'red', fontSize: 15 }}>390 грн</span>
+          <div style={{ marginTop: 12, display: 'flex' }}>
+            <img 
+              src="https://image.flaticon.com/icons/png/512/69/69881.png" 
+              width="20px"
+              style={{ objectFit: 'contain', marginRight: 12 }}
+              alt=""
+            />
+            <span style={{ color: 'green' }}>Dolor sit amet Dolor sit amet Dolor 800грн (90%)</span>
+          </div>
+
+          <div style={{ marginTop: 12, display: 'flex' }}>
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Simple_icon_time.svg/1200px-Simple_icon_time.svg.png" 
+              width="20px"
+              style={{ objectFit: 'contain', marginRight: 12 }}
+              alt=""
+            />
+            <span style={{ color: 'Orange' }}>Dolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet Dolor</span>
+          </div>
+
+          <p style={{ margin: '16px 0', opacity: .6 }}>Dolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet DolorDolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet DolorDolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet DolorDolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet DolorDolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet Dolor</p>
+        
+          <Button style={{ background: 'red', color: 'white' }}>Купити →</Button>
+
+          {
+            [
+              'https://cdn0.iconfinder.com/data/icons/business-management-line-2/24/cash-512.png',
+              'https://cdn2.iconfinder.com/data/icons/user-interface-icons-bundle-4/32/228-512.png',
+              'https://icons-for-free.com/iconfiles/png/512/money+icon-1320184267002448371.png',
+              'https://static.thenounproject.com/png/113907-200.png',
+            ].map((src, i) => (
+              <div key={i} style={{ marginTop: 12, display: 'flex' }}>
+                <img 
+                  src={src} 
+                  width="40px"
+                  style={{ objectFit: 'contain', marginRight: 12 }}
+                  alt=""
+                />
+                <span>Dolor sit amet Dolor sit amet Dolor</span>
+              </div>
+            ))
+          }
+        </div>
       </div>
-      <div style={{ height: '100%', width: 80, border }} />
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%', border, width: 300 }}>
-        <div style={{ padding, border, background: 'aqua', }}>1</div>
-        <div style={{ padding, border, flexGrow: 1, display: 'flex', alignItems: 'center' }}>4</div>
-        <div style={{ padding, border, background: 'aqua', }}>3</div>
+      <h4>Похожие товары</h4>
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', borderBottom: '1px solid grey', padding: '16px 0', }}>
+        {
+          [
+            { src: 'https://image.flaticon.com/icons/png/512/518/518713.png', text: 'Natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore' },
+            { src: 'https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/21_Angular-512.png', text: 'Sed accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore' },
+            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore' },
+            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png', text: 'Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore' }
+          ].map(({ src, text }) => (
+            <div key={src} style={{ width: '22%', cursor: 'pointer' }}>
+              <img 
+                src={src} 
+                width="100%"
+                height="250px"
+                style={{ objectFit: 'cover' }}
+                alt=""
+              />
+              <p style={{ margin: '12px 0' }}>{text}</p>
+              <strike style={{ marginRight: 12 }}>1,190 грн</strike>
+              <span style={{ color: 'blue' }}>390 грн</span>
+            </div>
+          ))
+        }
       </div>
-      <div style={{ height: '100%', width: 80, border }} />
+      <div style={{ marginTop: 40, display: 'flex', justifyContent: 'space-between' }}>
+        {
+          [
+            {
+              label: 'Допомога',
+              render: () => {
+                return ['Dolor sit amet', 'Dolor sit amet Dolor sit', 'Dolor'].map((text) => <div style={{ padding: '4px 0' }} key={text}>{text}</div>)
+              }
+            },
+            {
+              label: 'Контакт',
+              render: () => {
+                return <img alt="" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/letter-2414519-2031041.png" style={{ margin: 2, width: '40px' }} />;
+              }
+            },
+            {
+              label: 'Партнери',
+              render: () => {
+                return [
+                  'http://cdn.onlinewebfonts.com/svg/img_460077.png', 
+                  'https://static.thenounproject.com/png/321702-200.png', 
+                  'https://cdn.iconscout.com/icon/premium/png-512-thumb/write-letter-1737359-1478674.png'
+                ].map((src) => <img style={{ margin: 2, width: '40px', objectFit: 'contain' }} key={src} src={src} alt="" />);
+              }
+            },
+            {
+              label: 'Платежi',
+              render: () => {
+                return (
+                  <>
+                    {[
+                      'http://cdn.onlinewebfonts.com/svg/img_460077.png', 
+                      'https://static.thenounproject.com/png/321702-200.png', 
+                      'https://cdn.iconscout.com/icon/premium/png-512-thumb/write-letter-1737359-1478674.png'
+                    ].map((src) => <img style={{ margin: 2, width: '40px', objectFit: 'contain' }} key={src} src={src} alt="" />)}
+                    <p>Dolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet Dolor >Dolor sit amet Dolor sit amet Dolor</p>
+                  </>
+                );
+              }
+            },
+          ].map(({ label, render }) => (
+            <div key={label} style={{ width: '22%' }}>
+              <h6 style={{ paddingBottom: 12, borderBottom: '1px solid grey', marginBottom: 40 }}>{label}</h6>
+              {render()}
+            </div>
+          ))
+        }
+      </div>
+    
     </div>
   );
 });
@@ -357,10 +492,10 @@ export const Lab3HytrykSite = withStyles(hytrykSiteStyles)((props) => {
             <div>
               {[
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Luxoft-logo-2015.svg/1280px-Luxoft-logo-2015.svg.png',
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Luxoft-logo-2015.svg/1280px-Luxoft-logo-2015.svg.png',
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Luxoft-logo-2015.svg/1280px-Luxoft-logo-2015.svg.png',
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Luxoft-logo-2015.svg/1280px-Luxoft-logo-2015.svg.png',
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Luxoft-logo-2015.svg/1280px-Luxoft-logo-2015.svg.png',
+                'http://pngimg.com/uploads/microsoft/microsoft_PNG20.png',
+                'https://6-dof.ru/wp-content/uploads/2017/07/apple-logo.png',
+                'https://upload.wikimedia.org/wikipedia/commons/d/da/SoftServe_logo_new.png',
+                'https://crmrating.org/img/terrasoft.png',
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Luxoft-logo-2015.svg/1280px-Luxoft-logo-2015.svg.png',
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Luxoft-logo-2015.svg/1280px-Luxoft-logo-2015.svg.png',
               ].map((companyLogo, i) => (

@@ -7,7 +7,7 @@ import Sidebar from './components/Sidebar';
 
 import { Lab1AppDescription, Lab1HostingAndIDE, Lab1Task, Lab1Look, Lab1Table, Lab1Form, Lab1Image, Lab1Heading, Lab1Summary } from './modules/Lab1';
 import { Lab2List, Lab2Task, Lab2Id, Lab2Indent, Lab2Float, Lab2Selectors, Lab2SelectorsTagClass, Lab2SelectorsOther, Lab2SelectorsGrouping } from './modules/Lab2';
-import { Lab3IDE, Lab3SiteScreen, Lab3Task, Lab3HTML, Lab3CSS, Lab3Flex, Lab3Summary, Lab3KorniienkoFlex, Lab3KudymenkoFlex, Lab3HytrykFlex, Lab3KudymenkoSite, Lab3HytrykSite } from './modules/Lab3';
+import { Lab3IDE, Lab3SiteScreen, Lab3Task, Lab3HTML, Lab3CSS, Lab3Flex, Lab3Summary, Lab3KorniienkoFlex, Lab3KudymenkoFlex, Lab3HytrykFlex, Lab3KudymenkoSite, Lab3HytrykSite, Lab3KorniienkoSite } from './modules/Lab3';
 
 import styles from './Layout.styles';
 
@@ -26,7 +26,7 @@ const LAB_ID = {
 class Layout extends React.Component {
   state = {
     selectedLabContentId: undefined,
-    activeTabId: LAB_ID.first,
+    activeTabId: LAB_ID.third,
     Component: () => <div style={{ textAlign: 'center', paddingTop: '10%' }}>Будь-ласка, оберіть щось збоку :)</div>
   };
 
@@ -75,7 +75,7 @@ class Layout extends React.Component {
           { name: 'CSS сайту', component: Lab3CSS, id: `${LAB_ID.third}_css` },
           { name: 'Flexbox. Скрін, HTML, CSS', component: Lab3Flex, id: `${LAB_ID.third}_flexbox` },
           { name: <>Розмітка за доп. блочних елементів. <b>Корнієнко</b></>, component: Lab3KorniienkoFlex, id: `${LAB_ID.third}_flex_Kornienko` },
-          { name: <>Сайт. <b>Корнієнко</b></>, component: Lab3KorniienkoFlex, id: `${LAB_ID.third}_site_Kornienko` },
+          { name: <>Сайт. <b>Корнієнко</b></>, component: Lab3KorniienkoSite, id: `${LAB_ID.third}_site_Kornienko` },
           { name: <>Розмітка за доп. блочних елементів. <b>Кудименко</b></>, component: Lab3KudymenkoFlex, id: `${LAB_ID.third}_flex_Kudymenko` },
           { name: <>Сайт. <b>Кудименко</b></>, component: Lab3KudymenkoSite, id: `${LAB_ID.third}_site_Kudymenko` },
           { name: <>Розмітка за доп. блочних елементів. <b>Хитрик</b></>, component: Lab3HytrykFlex, id: `${LAB_ID.third}_flex_Hytryk` },
