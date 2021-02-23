@@ -544,6 +544,23 @@ export const Lab3HytrykSite = withStyles(hytrykSiteStyles)((props) => {
           ))}
         </div>
       </section>
+
+      <section style={{ display: 'flex', height: 32, marginTop: 24 }}>
+        <div style={{ padding: 8, flexGrow: 1, background: 'black', textAlign: 'left', height: '100%', color: 'white', marginRight: 24 }}>
+          © 2020
+        </div>
+        {
+          [
+            'https://cdn3.iconfinder.com/data/icons/glypho-social-and-other-logos/64/logo-facebook-512.png',
+            'https://image.flaticon.com/icons/png/512/23/23681.png',
+            'https://i.pinimg.com/originals/37/17/bd/3717bd3e3e6f2c23a8635eb76c37140c.png',
+            'https://pics.freeicons.io/uploads/icons/png/1766858341556105723-512.png',
+
+          ].map((logo) => (
+            <img key={logo} style={{ marginRight: 8 }} src={logo} height="100%" alt="" />
+          ))
+        }
+      </section>
     </div>
   );
 });
