@@ -16,12 +16,11 @@ export const kudymenkoSiteStyles = {
     width: '100%',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: 'grey',
+    backgroundColor: '#8080803b',
     padding: '20px 15px',
+    marginBottom: 24
   },
-  heading: {
-    color: 'aqua',
-  },
+  heading: {},
   workTime: {
     color: 'blue'
   },

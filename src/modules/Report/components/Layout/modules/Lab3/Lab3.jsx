@@ -385,8 +385,12 @@ export const Lab3KudymenkoSite = withStyles(kudymenkoSiteStyles)((props) => {
   return (
     <div className={classes.root}>
       <header className={classes.header}>
-        <section>
-          <img src="https://res-4.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1462873719/iwdi7ujyagn62pbyntvx.png" />
+        <section style={{ display: 'flex', alignItems: 'center' }}>
+          <img 
+            src="https://cdn.iconscout.com/icon/premium/png-512-thumb/write-letter-1737359-1478674.png" 
+            alt="" 
+            height="32px"
+          />
           <span className={classes.heading}>Начальний центр навчання - IT</span>
         </section>
         <span className={classes.workTime}>Ми працюємо Пн-Пт: 10:00 - 19:00, Сб - Нд: Вихідний</span>
@@ -398,15 +402,61 @@ export const Lab3KudymenkoSite = withStyles(kudymenkoSiteStyles)((props) => {
         ))}
       </section>
 
-      <section>
-        <div>
+      <section style={{ backgroundColor: '#8080803b', display: 'flex', justifyContent: 'space-between', padding: 12, marginTop: 24 }}>
+        <div style={{ background: 'blue', color: 'white', padding: 12, width: '30%' }}>
           {Array(10).fill('').map((x, i) => (
-            <div key={i}>
+            <div key={i} style={{ padding: '3px 0' }}>
               Курси {faker.company.bsNoun()}
             </div>
           ))}
         </div>
+        <div style={{ background: 'orange', padding: 12, width: '30%' }}>
+          {Array(3).fill('').map((x, i) => (
+            <div key={i}>
+              <div>
+                <img 
+                  alt=""
+                  width="25px"
+                  src={faker.image.business()}
+                  style={{ marginRight: 12 }}
+                />
+                <b>{faker.company.catchPhrase()}</b>
+              </div>
+              <p style={{ margin: '10px 0 24px 0' }}>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem </p>
+            </div>
+          ))}
+        </div>
+        <div style={{ background: 'red', padding: 12, width: '30%' }}>
+          <h6>Знати курс</h6>
+          <p style={{ margin: '12px 0' }}>
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lore Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lore
+          </p>
+          <input style={{ height: 30, width: '100%' }} placeholder="Пошук" />
+        </div>
       </section>
+
+      <h6 style={{ margin: '24px 0', textAlign: 'center', fontWeight: 800 }}>Курси веб програмування</h6>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <img 
+          src="http://www.handsonsavannah.org/wp-content/uploads/2019/10/AdobeStock_256229414.jpg" 
+          alt=""
+          width="30%"
+        />
+        <p style={{ marginLeft: 12 }}>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 24 }}>
+        {[
+          'Мапа',
+          'Контакт',
+          'Посилання',
+          'Мапа',
+        ].map((text) => (
+          <Button style={{ width: 150 }} color="default">
+            {text}
+          </Button>
+        ))}
+      </div>
     </div>
   );
 });
