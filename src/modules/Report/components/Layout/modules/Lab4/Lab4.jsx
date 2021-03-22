@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Button, MenuItem, Select, withStyles } from '@material-ui/core';
 import faker from 'faker';
+import orderBy from 'lodash/orderBy';
 
 import SiteScreen from './assets/lab3.PNG';
 import FlexScreen from './assets/flex-header.PNG';
@@ -16,362 +17,237 @@ export const Lab4Task = withStyles(styles)(() => {
   );
 });
 
-export const Lab4IDE = withStyles(styles)(() => {
-  return (
-    <>
-      <div>
-        VS Code.
-      </div>
-      <code>
-        <pre>
-        {`
-// in App.jsx
-import Main from './modules/Main';
-
-// in Main.jsx
-import styles from './Main.styles';
-        `}
-        </pre>
-      </code>
-    </>
-  );
-});
-
-export const Lab4SiteScreen = withStyles(styles)(() => {
-  return (
-    <img src={SiteScreen} alt="" width="100%" />
-  );
-});
-
-export const Lab4HTML = withStyles(styles)(() => {
+export const Lab4Hyper = withStyles(styles)(() => {
   return (
     <code>
       <pre>
       {`
-<div className={classes.root}>
-  <header className={classes.header}>
-    <h1>Denzel</h1>
-    <img className={classes.logo} src="https://www.freepnglogos.com/uploads/cleveland-auto-show-car-logo-png-25.png" alt="logo" />
-    <a style={{ display: 'block' }} href="https://www.mercedes-benz.ua/" target="_blank" rel="noopener noreferrer">Feel free to join us!</a>
-    <marquee behavior="scroll" direction="left" style={{ position: 'absolute', left: 0 }}>Denzel</marquee>
-  </header>
-  <form>
-    <label for="fname">First name:</label><br />
-    <input type="text" id="fname" name="fname" /><br />
-    <label for="lname">Last name:</label><br />
-    <input type="text" id="lname" name="lname" />
-  </form>
-  <br />
-  <table>
-    <tbody>
-      <tr>
-        <th>Name</th>
-        <th>Contact</th>
-        <th>Country</th>
-        <th>Model</th>
-      </tr>
-      {this.users.map((user) => (
-        <tr key={user.name}>
-          <td>{user.name}</td>
-          <td>{user.contact}</td>
-          <td>{user.country}</td>
-          <td>{user.model}</td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-
-  <ul style={{ marginLeft: 12 }}>
-    <li>Tesla</li>
-    <li>Toyota
-      <ul>
-        <li>Jaguar</li>
-        <li>Mercedes</li>
-      </ul>
-    </li>
-  </ul>
-</div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
       `}
       </pre>
     </code>
   );
 });
 
-export const Lab4CSS = withStyles(styles)(() => {
+export const Lab4Handler = withStyles(styles)(() => {
   return (
     <code>
       <pre>
       {`
-const styles = {
-  root: {
-    padding: 12,
-
-    '& table': {
-      fontFamily: 'arial, sans-serif',
-      borderCollapse: 'collapse',
-      width: '100%',
-    },
-    
-    '& td, th': {
-      border: '1px solid #dddddd',
-      textAlign: 'left',
-      padding: 8,
-    },
-    
-    '& tr:nth-child(even)': {
-      backgroundColor: '#dddddd',
-    },
-
-    '& > header': {}
-  },
-  header: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  logo: {
-    width: 150,
-    marginTop: 24
-  },
-};
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('Hello World')
+  })
+</script>
       `}
       </pre>
     </code>
   );
 });
 
-export const Lab4Flex = withStyles(styles)(() => {
-  return (
-    <>
-      <img src={FlexScreen} alt="" width="100%" />
-      <code>
-        <pre>
-        {`
-HTML:
-
-<header className={classes.root}>
-  <section className={classes.intro}>
-    <h1 className={classes.introHeading}>ЗВІТИ ЛАБОРАТОРНИХ РОБІТ</h1>
-    <h2 className={classes.introSubheading}>З ДИСЦИПЛІНИ "WEB-ТЕХНОЛОГІЇ</h2>
-    <h3 className={classes.introIdentification}>Групи ІА-72, Бригади 5, Корнієнко О., Кудименко В., Хитрик Г.</h3>
-  </section>
-  <section className={classes.labs}>
-    {Array(labsAmount).fill('').map((x, i) => (
-      <Button 
-        style={{ background: i === selectedLabId ? '#dbfdff' : 'inherit' }}
-        key={i}
-        className={classes.labBtn}
-        onClick={this.handleSelect(i)}
-      >
-        Лабораторна робота {i + 1}
-      </Button>
-    ))}
-  </section>
-</header>
-
-CSS:
-
-header: {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
+function getRandomValue(min, max) {
+  return Math.round((Math.random() * (max - min) + min));
 }
-        `}
-        </pre>
-      </code>
-    </>
-  );
-});
 
-export const Lab4KorniienkoFlex = withStyles(styles)(() => {
-  const border = '1px solid black';
-  const padding = '10px 0 10px 10px';
+const sortArray = (arr, dir = 'asc') => {
+  return arr.sort((a, b) => (a - b) * (dir === 'asc' ? 1 : -1));
+};
 
-  return (
-    <div style={{ height: 400, display: 'inline-flex', boxShadow: '2px 2px 8px 2px' }}>
-      <div style={{ ...flexCenterStyles, width: 100, height: '100%', border, background: 'yellow' }}>
-        2
-      </div>
-      <div style={{ height: '100%', width: 80, border }} />
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%', border, width: 300 }}>
-        <div style={{ padding, border, background: 'aqua', }}>1</div>
-        <div style={{ padding, border, flexGrow: 1, display: 'flex', alignItems: 'center' }}>4</div>
-        <div style={{ padding, border, background: 'aqua', }}>3</div>
-      </div>
-      <div style={{ height: '100%', width: 80, border }} />
-    </div>
-  );
-});
+const createArray = (number, start = 1, end = 6) => {
+  return Array(number).fill('').map((x) => getRandomValue(start, end));
+};
 
-export const Lab4KorniienkoSite = withStyles(korniinkoSiteStyles)(({ classes }) => {
+export const Lab4HytrykArray = withStyles(styles)(() => {
+  const [value, setValue] = React.useState('');
+
+  const handleChange = React.useCallback((e) => {
+    const { value } = e.target;
+
+    if (!isNaN(Number(value))) {
+      setValue(value);
+    }
+  }, []);
+
+  const first = createArray(Number(value));
+  const second = createArray(Number(value));
+
+  const repeatedElements = first.filter((el) => second.includes(el));
+
   return (
     <div>
-      <div
-        style={{
-          display: 'flex',
-          width: '100%',
-        }}
-      >
-        <div 
-          style={{ 
-            height: 400,
-            width: '50%',
-            minWidth: '50%',
-            display: 'flex',
-            alignItems: 'flex-end', 
-            justifyContent: 'center', 
-            color: 'white', 
-            fontSize: 30,
-            fontWeight: 700,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundImage: 'url(https://www.jsexpert.net/wp-content/uploads/2019/03/HTML5-y-CSS.jpg)',
-          }}
-        >
-          Частина 1
-        </div>
-        <div style={{ marginLeft: 24, }}>
-          <h1 className={classes.mainCourseName}>Dolor sit amet Dolor sit amet Dolor sit amet Dolor sit amet</h1>
-          <strike style={{ color: 'blue', marginRight: 12 }}>1,190 грн</strike>
-          <span style={{ color: 'red', fontSize: 15 }}>390 грн</span>
-          <div style={{ marginTop: 12, display: 'flex' }}>
-            <img 
-              src="https://image.flaticon.com/icons/png/512/69/69881.png" 
-              width="20px"
-              style={{ objectFit: 'contain', marginRight: 12 }}
-              alt=""
-            />
-            <span style={{ color: 'green' }}>Dolor sit amet Dolor sit amet Dolor 800грн (90%)</span>
-          </div>
+      <p>
+        Створити два одновимірних массивів, кількість елементів яких задана користувачем. Знайти найменший серед тих елементів першого вектора, які співпадають із значеннями елементів другого вектора.
 
-          <div style={{ marginTop: 12, display: 'flex' }}>
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Simple_icon_time.svg/1200px-Simple_icon_time.svg.png" 
-              width="20px"
-              style={{ objectFit: 'contain', marginRight: 12 }}
-              alt=""
-            />
-            <span style={{ color: 'Orange' }}>Dolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet Dolor</span>
-          </div>
+        Упорядкувати масив у порядку зростання. Надрукувати вхідний та вихідний масив.
+      </p>
+      <input style={{ margin: '12px 0' }} value={value} onChange={handleChange} />
+      <code style={{ display: 'block' }}>
+        {JSON.stringify(first)} - initial 1, {JSON.stringify(sortArray(first))}
+      </code>
+      <code style={{ display: 'block' }}>
+        {JSON.stringify(second)} - initial 2, {JSON.stringify(sortArray(second))}
+      </code>
+      <code style={{ display: 'block' }}>
+        {JSON.stringify(repeatedElements)} - repeated, {Math.min(...repeatedElements)}
+      </code>
+      <code>
+        <pre>
+          {`
+const [value, setValue] = React.useState('');
 
-          <p style={{ margin: '16px 0', opacity: .6 }}>Dolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet DolorDolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet DolorDolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet DolorDolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet DolorDolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet Dolor</p>
-        
-          <Button style={{ background: 'red', color: 'white' }}>Купити →</Button>
+const handleChange = React.useCallback((e) => {
+  const { value } = e.target;
 
-          {
-            [
-              'https://cdn0.iconfinder.com/data/icons/business-management-line-2/24/cash-512.png',
-              'https://cdn2.iconfinder.com/data/icons/user-interface-icons-bundle-4/32/228-512.png',
-              'https://icons-for-free.com/iconfiles/png/512/money+icon-1320184267002448371.png',
-              'https://static.thenounproject.com/png/113907-200.png',
-            ].map((src, i) => (
-              <div key={i} style={{ marginTop: 12, display: 'flex' }}>
-                <img 
-                  src={src} 
-                  width="40px"
-                  style={{ objectFit: 'contain', marginRight: 12 }}
-                  alt=""
-                />
-                <span>Dolor sit amet Dolor sit amet Dolor</span>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-      <h4>Похожие товары</h4>
-      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', borderBottom: '1px solid grey', padding: '16px 0', }}>
-        {
-          [
-            { src: 'https://image.flaticon.com/icons/png/512/518/518713.png', text: 'Natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore' },
-            { src: 'https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/21_Angular-512.png', text: 'Sed accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore' },
-            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore' },
-            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png', text: 'Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore' }
-          ].map(({ src, text }) => (
-            <div key={src} style={{ width: '22%', cursor: 'pointer' }}>
-              <img 
-                src={src} 
-                width="100%"
-                height="250px"
-                style={{ objectFit: 'cover' }}
-                alt=""
-              />
-              <p style={{ margin: '12px 0' }}>{text}</p>
-              <strike style={{ marginRight: 12 }}>1,190 грн</strike>
-              <span style={{ color: 'blue' }}>390 грн</span>
-            </div>
-          ))
-        }
-      </div>
-      <div style={{ marginTop: 40, display: 'flex', justifyContent: 'space-between' }}>
-        {
-          [
-            {
-              label: 'Допомога',
-              render: () => {
-                return ['Dolor sit amet', 'Dolor sit amet Dolor sit', 'Dolor'].map((text) => <div style={{ padding: '4px 0' }} key={text}>{text}</div>)
-              }
-            },
-            {
-              label: 'Контакт',
-              render: () => {
-                return <img alt="" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/letter-2414519-2031041.png" style={{ margin: 2, width: '40px' }} />;
-              }
-            },
-            {
-              label: 'Партнери',
-              render: () => {
-                return [
-                  'http://cdn.onlinewebfonts.com/svg/img_460077.png', 
-                  'https://static.thenounproject.com/png/321702-200.png', 
-                  'https://cdn.iconscout.com/icon/premium/png-512-thumb/write-letter-1737359-1478674.png'
-                ].map((src) => <img style={{ margin: 2, width: '40px', objectFit: 'contain' }} key={src} src={src} alt="" />);
-              }
-            },
-            {
-              label: 'Платежi',
-              render: () => {
-                return (
-                  <>
-                    {[
-                      'http://cdn.onlinewebfonts.com/svg/img_460077.png', 
-                      'https://static.thenounproject.com/png/321702-200.png', 
-                      'https://cdn.iconscout.com/icon/premium/png-512-thumb/write-letter-1737359-1478674.png'
-                    ].map((src) => <img style={{ margin: 2, width: '40px', objectFit: 'contain' }} key={src} src={src} alt="" />)}
-                    <p>Dolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet Dolor Dolor sit amet Dolor sit amet Dolor >Dolor sit amet Dolor sit amet Dolor</p>
-                  </>
-                );
-              }
-            },
-          ].map(({ label, render }) => (
-            <div key={label} style={{ width: '22%' }}>
-              <h6 style={{ paddingBottom: 12, borderBottom: '1px solid grey', marginBottom: 40 }}>{label}</h6>
-              {render()}
-            </div>
-          ))
-        }
-      </div>
-    
+  if (!isNaN(Number(value))) {
+    setValue(value);
+  }
+}, []);
+
+const first = createArray(Number(value));
+const second = createArray(Number(value));
+
+const repeatedElements = first.filter((el) => second.includes(el));
+
+return (
+  <div>
+    <p>
+      Створити два одновимірних массивів, кількість елементів яких задана користувачем. 
+      Знайти найменший серед тих елементів першого вектора, які співпадають із значеннями елементів другого вектора.
+
+      Упорядкувати масив у порядку зростання. Надрукувати вхідний та вихідний масив.
+    </p>
+    <input style={{ margin: '12px 0' }} value={value} onChange={handleChange} />
+    <code style={{ display: 'block' }}>
+      {JSON.stringify(first)} - initial 1, {JSON.stringify(sortArray(first))}
+    </code>
+    <code style={{ display: 'block' }}>
+      {JSON.stringify(second)} - initial 2, {JSON.stringify(sortArray(second))}
+    </code>
+    <code style={{ display: 'block' }}>
+      {JSON.stringify(repeatedElements)} - repeated, {Math.min(...repeatedElements)}
+    </code>
+  </div>
+);
+          `}
+        </pre>
+      </code>
     </div>
   );
 });
 
-export const Lab4KudymenkoFlex = withStyles(styles)(() => {
-  const border = '1px solid black';
-  const padding = '10px 0 10px 10px';
+export const Lab4KorniienkoArray = withStyles(korniinkoSiteStyles)(({ classes }) => {
+  const first = sortArray(createArray(20, 1, 20));
+  const filtered = first.filter((el) => el % 2 === 0 || el % 3 === 0);
+  const second = [
+    ...filtered.filter((el) => el % 2 === 0 && el % 3 !== 0),
+    ...filtered.filter((el) => el % 2 !== 0 && el % 3 === 0),
+    ...filtered.filter((el) => el % 2 === 0 && el % 3 === 0),
+  ];
 
   return (
-    <div style={{ height: 400, display: 'inline-flex', boxShadow: '2px 2px 8px 2px' }}>
-      <div style={{ ...flexCenterStyles, width: 100, height: '100%', border, background: 'yellow' }}>
-        2
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%', border, width: 300 }}>
-        <div style={{ padding, border, background: 'aqua', }}>1</div>
-        <div style={{ padding, border, flexGrow: 1, display: 'flex', alignItems: 'center' }}>4</div>
-        <div style={{ padding, border, background: 'aqua', }}>3</div>
-      </div>
-      <div style={{ height: '100%', width: 80, border }} />
+    <div>
+      <p>
+      Заданий масив цілих чисел. Побудувати новий масив, в якому спочатку стоять числа, що діляться на 2, потім ті, що діляться на 2 та 3, потім на 3. Надрукувати вхідний та вихідний масиви.
+      Упорядкувати масив у порядку зростання. Надрукувати вхідний та вихідний масив.
+      </p>
+      <code style={{ display: 'block' }}>
+        {JSON.stringify(first)}, {JSON.stringify(sortArray(second))}
+      </code>
+
+      <code>
+        <pre>
+          {`
+const first = sortArray(createArray(20, 1, 20));
+const filtered = first.filter((el) => el % 2 === 0 || el % 3 === 0);
+const second = [
+  ...filtered.filter((el) => el % 2 === 0 && el % 3 !== 0),
+  ...filtered.filter((el) => el % 2 !== 0 && el % 3 === 0),
+  ...filtered.filter((el) => el % 2 === 0 && el % 3 === 0),
+];
+
+return (
+  <div>
+    <p>
+    Заданий масив цілих чисел. Побудувати новий масив, в якому спочатку стоять числа, що діляться на 2, потім ті, 
+    що діляться на 2 та 3, потім на 3. Надрукувати вхідний та вихідний масиви.
+    Упорядкувати масив у порядку зростання. Надрукувати вхідний та вихідний масив.
+    </p>
+    <code style={{ display: 'block' }}>
+      {JSON.stringify(first)}, {JSON.stringify(sortArray(second))}
+    </code>
+  </div>
+);
+          `}
+        </pre>
+      </code>
+    </div>
+  );
+});
+
+export const Lab4KudymenkoArray = withStyles(styles)(() => {
+  const [value, setValue] = React.useState('');
+
+  const handleChange = React.useCallback((e) => {
+    const { value } = e.target;
+
+    if (!isNaN(Number(value))) {
+      setValue(value);
+    }
+  }, []);
+
+  const first = createArray(Number(value));
+  const smallest = Math.min(...first);
+
+  return (
+    <div>
+      <p>
+      Згенерувати значення елементів одновимірного масиву за допомогою генератора псевдовипадкових чисел, задавши кількість елементів масиву з клавіатури. Знайти мінімальний за значенням елемент і записати його на початок масиву, вивільнивши для нього місце шляхом зсуву елементів масиву вправо
+      Упорядкувати масив у порядку зменшення. Надрукувати вхідний та вихідний масив.
+      </p>
+      <input style={{ margin: '12px 0' }} value={value} onChange={handleChange} />
+      <code style={{ display: 'block' }}>
+        {JSON.stringify(first)} - initial
+      </code>
+      <code style={{ display: 'block' }}>
+        {JSON.stringify(sortArray([...first, smallest]), 'desc')}, {smallest}
+      </code>
+
+      <code>
+        <pre>
+          {`
+const [value, setValue] = React.useState('');
+
+const handleChange = React.useCallback((e) => {
+  const { value } = e.target;
+
+  if (!isNaN(Number(value))) {
+    setValue(value);
+  }
+}, []);
+
+const first = createArray(Number(value));
+const smallest = Math.min(...first);
+
+return (
+  <div>
+    <p>
+    Згенерувати значення елементів одновимірного масиву за допомогою генератора 
+    псевдовипадкових чисел, задавши кількість елементів масиву з клавіатури. 
+    Знайти мінімальний за значенням елемент і записати його на початок масиву, вивільнивши для нього місце шляхом зсуву елементів масиву вправо
+    Упорядкувати масив у порядку зменшення. Надрукувати вхідний та вихідний масив.
+    </p>
+    <input style={{ margin: '12px 0' }} value={value} onChange={handleChange} />
+    <code style={{ display: 'block' }}>
+      {JSON.stringify(first)} - initial
+    </code>
+    <code style={{ display: 'block' }}>
+      {JSON.stringify(sortArray([...first, smallest]), 'desc')}, {smallest}
+    </code>
+  </div>
+);
+          `}
+        </pre>
+      </code>
     </div>
   );
 });
@@ -624,7 +500,7 @@ export const Lab4HytrykSite = withStyles(hytrykSiteStyles)((props) => {
 
 export const Lab4Summary = withStyles(styles)(() => {
   return (
-    'Навчилися працювати с Flexbox, таблицями, плаваючими елементами'
+    'Навчилися працювати с javascript'
   );
 });
 

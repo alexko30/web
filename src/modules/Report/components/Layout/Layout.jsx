@@ -8,9 +8,9 @@ import Sidebar from './components/Sidebar';
 import { Lab1AppDescription, Lab1HostingAndIDE, Lab1Task, Lab1Look, Lab1Table, Lab1Form, Lab1Image, Lab1Heading, Lab1Summary } from './modules/Lab1';
 import { Lab2List, Lab2Task, Lab2Id, Lab2Indent, Lab2Float, Lab2Selectors, Lab2SelectorsTagClass, Lab2SelectorsOther, Lab2SelectorsGrouping } from './modules/Lab2';
 import { Lab3IDE, Lab3SiteScreen, Lab3Task, Lab3HTML, Lab3CSS, Lab3Flex, Lab3Summary, Lab3KorniienkoFlex, Lab3KudymenkoFlex, Lab3HytrykFlex, Lab3KudymenkoSite, Lab3HytrykSite, Lab3KorniienkoSite } from './modules/Lab3';
+import { Lab4Hyper, Lab4Task, Lab4Handler, Lab4HytrykArray, Lab4KorniienkoArray, Lab4KudymenkoArray } from './modules/Lab4';
 
 import styles from './Layout.styles';
-import { Lab4Task } from './modules/Lab4';
 
 const LAB_ID = {
   first: 0,
@@ -87,17 +87,12 @@ class Layout extends React.Component {
       [LAB_ID.fourth]: {
         navigation: [
           { name: 'Тема та мета лаб. роботи', component: Lab4Task, id: `${LAB_ID.fourth}_task` },
-          { name: 'Середовище розробки, шлях до файлів', component: Lab3IDE, id: `${LAB_ID.fourth}_ide` },
-          { name: 'Скріншот головної сторінки сайту', component: Lab3SiteScreen, id: `${LAB_ID.fourth}_main-page-screen` },
-          { name: 'HTML сайту', component: Lab3HTML, id: `${LAB_ID.fourth}_html` },
-          { name: 'CSS сайту', component: Lab3CSS, id: `${LAB_ID.fourth}_css` },
-          { name: 'Flexbox. Скрін, HTML, CSS', component: Lab3Flex, id: `${LAB_ID.fourth}_flexbox` },
-          { name: <>Розмітка за доп. блочних елементів. <b>Корнієнко</b></>, component: Lab3KorniienkoFlex, id: `${LAB_ID.fourth}_flex_Kornienko` },
-          { name: <>Сайт. <b>Корнієнко</b></>, component: Lab3KorniienkoSite, id: `${LAB_ID.fourth}_site_Kornienko` },
-          { name: <>Розмітка за доп. блочних елементів. <b>Кудименко</b></>, component: Lab3KudymenkoFlex, id: `${LAB_ID.fourth}_flex_Kudymenko` },
-          { name: <>Сайт. <b>Кудименко</b></>, component: Lab3KudymenkoSite, id: `${LAB_ID.fourth}_site_Kudymenko` },
-          { name: <>Розмітка за доп. блочних елементів. <b>Хитрик</b></>, component: Lab3HytrykFlex, id: `${LAB_ID.fourth}_flex_Hytryk` },
-          { name: <>Сайт. <b>Хитрик</b></>, component: Lab3HytrykSite, id: `${LAB_ID.fourth}_site_Hytryk` },
+          { name: 'Гіпертекстове посилання', component: Lab4Hyper, id: `${LAB_ID.fourth}_hyper` },
+          { name: 'Handler', component: Lab4Handler, id: `${LAB_ID.fourth}_handler` },
+          { name: 'Вставка', component: Lab4Handler, id: `${LAB_ID.fourth}_insert` },
+          { name: <>Масиви. <b>Хитрик</b></>, component: Lab4HytrykArray, id: `${LAB_ID.fourth}_array-Hytryk` },
+          { name: <>Масиви. <b>Корнієнко</b></>, component: Lab4KorniienkoArray, id: `${LAB_ID.fourth}_array_Kornienko` },
+          { name: <>Масиви. <b>Кудименко</b></>, component: Lab4KudymenkoArray, id: `${LAB_ID.fourth}_array_Kudymenko` },
           { name: 'Висновки', component: Lab3Summary, id: `${LAB_ID.fourth}_summary` },
         ]
       },
