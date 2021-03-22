@@ -9,6 +9,7 @@ import { Lab1AppDescription, Lab1HostingAndIDE, Lab1Task, Lab1Look, Lab1Table, L
 import { Lab2List, Lab2Task, Lab2Id, Lab2Indent, Lab2Float, Lab2Selectors, Lab2SelectorsTagClass, Lab2SelectorsOther, Lab2SelectorsGrouping } from './modules/Lab2';
 import { Lab3IDE, Lab3SiteScreen, Lab3Task, Lab3HTML, Lab3CSS, Lab3Flex, Lab3Summary, Lab3KorniienkoFlex, Lab3KudymenkoFlex, Lab3HytrykFlex, Lab3KudymenkoSite, Lab3HytrykSite, Lab3KorniienkoSite } from './modules/Lab3';
 import { Lab4Hyper, Lab4Task, Lab4Handler, Lab4HytrykArray, Lab4KorniienkoArray, Lab4KudymenkoArray } from './modules/Lab4';
+import { Lab5Components, Lab5Gallery, Lab5SliderPhoto, Lab5Task, Lab5SliderVideo, Lab5Social, Lab5Clock, Lab5Forecast } from './modules/Lab5/Lab5';
 
 import styles from './Layout.styles';
 
@@ -94,6 +95,19 @@ class Layout extends React.Component {
           { name: <>Масиви. <b>Корнієнко</b></>, component: Lab4KorniienkoArray, id: `${LAB_ID.fourth}_array_Kornienko` },
           { name: <>Масиви. <b>Кудименко</b></>, component: Lab4KudymenkoArray, id: `${LAB_ID.fourth}_array_Kudymenko` },
           { name: 'Висновки', component: Lab3Summary, id: `${LAB_ID.fourth}_summary` },
+        ]
+      },
+      [LAB_ID.fifth]: {
+        navigation: [
+          { name: 'Тема та мета лаб. роботи', component: Lab5Task, id: `${LAB_ID.fifth}_task` },
+          { name: '3 елементы', component: Lab5Components, id: `${LAB_ID.fifth}_components` },
+          { name: 'Gallery', component: Lab5Gallery, id: `${LAB_ID.fifth}_gallery` },
+          { name: 'Slider photo', component: Lab5SliderPhoto, id: `${LAB_ID.fifth}_Lab5SliderPhoto` },
+          { name: 'Slider video', component: Lab5SliderVideo, id: `${LAB_ID.fifth}_Lab5SliderVideo` },
+          { name: 'Social media', component: Lab5Social, id: `${LAB_ID.fifth}_cccco` },
+          { name: 'Clock', component: Lab5Clock, id: `${LAB_ID.fifth}_Lab5Clock` },
+          { name: 'Forecast', component: Lab5Forecast, id: `${LAB_ID.fifth}_array_Kudymenko` },
+          { name: 'Висновки', component: Lab3Summary, id: `${LAB_ID.fifth}_summary` },
         ]
       },
     };
