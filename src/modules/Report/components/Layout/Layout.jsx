@@ -10,6 +10,7 @@ import { Lab2List, Lab2Task, Lab2Id, Lab2Indent, Lab2Float, Lab2Selectors, Lab2S
 import { Lab3IDE, Lab3SiteScreen, Lab3Task, Lab3HTML, Lab3CSS, Lab3Flex, Lab3Summary, Lab3KorniienkoFlex, Lab3KudymenkoFlex, Lab3HytrykFlex, Lab3KudymenkoSite, Lab3HytrykSite, Lab3KorniienkoSite } from './modules/Lab3';
 import { Lab4Hyper, Lab4Task, Lab4Handler, Lab4HytrykArray, Lab4KorniienkoArray, Lab4KudymenkoArray } from './modules/Lab4';
 import { Lab5Components, Lab5Gallery, Lab5SliderPhoto, Lab5Task, Lab5SliderVideo, Lab5Social, Lab5Clock, Lab5Forecast } from './modules/Lab5/Lab5';
+import { Lab6Task, Lab6Summary } from './modules/Lab6/Lab6';
 
 import styles from './Layout.styles';
 
@@ -108,6 +109,13 @@ class Layout extends React.Component {
           { name: 'Clock', component: Lab5Clock, id: `${LAB_ID.fifth}_Lab5Clock` },
           { name: 'Forecast', component: Lab5Forecast, id: `${LAB_ID.fifth}_array_Kudymenko` },
           { name: 'Висновки', component: Lab3Summary, id: `${LAB_ID.fifth}_summary` },
+        ]
+      },
+      [LAB_ID.sixth]: {
+        navigation: [
+          { name: 'Тема та мета лаб. роботи', component: Lab6Task, id: `${LAB_ID.sixth}_task` },
+          { name: '3 елементы', component: Lab5Components, id: `${LAB_ID.sixth}_components` },
+          { name: 'Висновки', component: Lab6Summary, id: `${LAB_ID.sixth}_summary` },
         ]
       },
     };

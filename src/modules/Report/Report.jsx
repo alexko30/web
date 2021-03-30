@@ -9,7 +9,7 @@ class Report extends React.Component {
   render() {
     return (
       <Layout 
-        labsAmount={5}
+        labsAmount={6}
       />
     );
   }
